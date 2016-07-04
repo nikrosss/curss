@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+
+
+<div id="page-wrapper">
+    <div id="page" class="container">
+        <div class="title">
+            <h2 align="center">{{list_name}} </h2>
+        </div>
+    </div>
+</div>
+
+{% for work in all_work %}
+<div id="wrapper">
+    <div id="three-column" class="container">
+
+        <div><span class="arrow-down"></span></div>
+
+
+        <h2>{{work.company_name}}, {{work.periods}} мес. </h2>
+         <a href=" {{work.link}}"><span>Перейти на сайт работодателя</span></a>
+        <h3>Должностные обязанности: </h3>
+        <p>{{work.my_duties}}</p>
+
+
+    </div>
+
+ <!--   {%include 'inc-portfolio.html'%}-->
+</div>
+{% endfor %}
+
+<br>
+<br>
+<br>
+<div style="height:78px; width:512px;  margin: auto; background-color:#EDEDED;
+border-left:4px solid #8B8B8B;" align="center">
+    <q>Нет без явно усиленного трудолюбия ни талантов, ни гениев.</q>
+    <p align="right"><sub>Менделеев Д.И.</sub></p>
+</div>
+</p>
+
+</div>
+</div>
+
+
+{% endblock %}

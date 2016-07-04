@@ -1,6 +1,6 @@
 from django.shortcuts import render, Http404
 import os
-
+from .models import my_work
 # Create your views here.
 
 def home(request):
@@ -41,3 +41,25 @@ def jobs(request):
 
     return render (request, 'my_jobs.html', {'site_name':site_name,
                                            'list_name': list_name})
+
+def test(request):
+    all_work = my_work.objects.all()
+        #get(pk=1)
+
+    for i in all_work:
+        print
+
+        print(i.company_name)
+
+    site_name = 'NikRos(new stile)'
+
+    # Заголовок страницы
+    list_name = 'Места работы'
+
+    # приветствие
+
+
+    return render(request, 'jobs_new_site.html', {'site_name': site_name,
+                                          # 'privet_text':privet_text[0],
+                                          'all_work': all_work,
+                                          'list_name': list_name})

@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^(.*)its_me$', its_me),
     url(r'^index$', home),
     url(r'^jobs$', jobs),
+    url(r'^test$', test),
 
 
 ]
