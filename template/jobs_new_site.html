@@ -17,8 +17,8 @@
         <div><span class="arrow-down"></span></div>
 
 
-        <h2>{{work.company_name}}, {{work.periods}} мес. </h2>
-         <a href=" {{work.link}}"><span>Перейти на сайт работодателя</span></a>
+        <h2>{{work.id_company.company_name}}, {{work.periods}} мес. </h2>
+         <a href="/job/{{work.id_company.id}}/"><span>Открыть карточку организации</span></a>
         <h3>Должностные обязанности: </h3>
         <p>{{work.my_duties}}</p>
 

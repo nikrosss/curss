@@ -1,6 +1,6 @@
-from django.shortcuts import render, Http404
+from django.shortcuts import render, Http404, get_object_or_404
 import os
-from .models import my_work
+from .models import MyWork, CompanyName
 # Create your views here.
 
 def home(request):
@@ -25,6 +25,7 @@ def home(request):
                                           't': t,
                                           'list_name': list_name} )
 
+
 def its_me(request, self):
     site_name = 'NikRos(new stile)'
 
@@ -42,14 +43,15 @@ def jobs(request):
     return render (request, 'my_jobs.html', {'site_name':site_name,
                                            'list_name': list_name})
 
+
 def test(request):
-    all_work = my_work.objects.all()
-        #get(pk=1)
+    all_work = MyWork.objects.all()
+    # company_name = MyWork.objects.filter(id_company__company_name)
+    # get(pk=1)
+    # for i in all_work:
+    #   print
 
-    for i in all_work:
-        print
-
-        print(i.company_name)
+    #    print(i.company_name)
 
     site_name = 'NikRos(new stile)'
 
@@ -58,8 +60,18 @@ def test(request):
 
     # приветствие
 
-
     return render(request, 'jobs_new_site.html', {'site_name': site_name,
                                           # 'privet_text':privet_text[0],
                                           'all_work': all_work,
                                           'list_name': list_name})
+
+
+def company_site(request, self):
+
+    # try:
+
+    # except:
+
+    z = get_object_or_404(CompanyName, id = self )
+
+    return render(request, 'company_site.html', {'site_name': 'NikRos(new stile)', 't': 'о компании', 'z': z})

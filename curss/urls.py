@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^index$', home),
     url(r'^jobs$', jobs),
     url(r'^test$', test),
+    url(r'^job/(\d)/$', company_site),
 
 
 ]

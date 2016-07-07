@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div id="page-wrapper">
+    <div id="page" class="container">
+        <div class="title">
+            <h2>{{t}}</h2>
+        </div>
+        <h2>{{z.company_name}}</h2>
+        <p>Сайт: <a href="{{z.link}}">{{z.link}}</a> </p>
+    </div>
+</div>
+<div id="wrapper">
+    <div id="three-column" class="container">
+        <div><span class="arrow-down"></span></div>
+         <p>{{z.about_the_organization}} </p>
+
+    </div>
+ <!--   {%include 'inc-portfolio.html'%}-->
+</div>
+
+{% endblock %}
